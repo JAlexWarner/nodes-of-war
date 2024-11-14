@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwjeesqkmvlss"]
+
+[ext_resource type="Shader" path="res://Blob/Blob.gdshader" id="1_0kemm"]
+[ext_resource type="Script" path="res://Blob/blob.gd" id="1_y82sx"]
+[ext_resource type="Texture2D" uid="uid://j11hv0ox8njo" path="res://icon.svg" id="2_rl2b6"]
+[ext_resource type="FontFile" uid="uid://ckihfisyxm3jd" path="res://Blob/LeagueSpartan-Bold.otf" id="4_ckn84"]
+[ext_resource type="Script" path="res://Blob/label.gd" id="5_8s0kp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_alxi2"]
+resource_local_to_scene = true
+shader = ExtResource("1_0kemm")
+shader_parameter/line_thickness = 0.01
+shader_parameter/radius = 0.48
+shader_parameter/origin = Vector2(0.5, 0.5)
+shader_parameter/color = null
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mo58o"]
+radius = 25.02
+
+[sub_resource type="Theme" id="Theme_o6bps"]
+default_font = ExtResource("4_ckn84")
+Label/font_sizes/font_size = 18
+
+[node name="Blob" type="Node2D"]
+script = ExtResource("1_y82sx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_alxi2")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_rl2b6")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+scale = Vector2(2.5, 2.5)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_mo58o")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -55.0
+offset_right = 25.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_o6bps")
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_8s0kp")
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

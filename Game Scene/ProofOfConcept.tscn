@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://b777df1mk8k0d"]
+
+[ext_resource type="Script" path="res://Game Scene/proof_of_concept.gd" id="1_kr6td"]
+[ext_resource type="PackedScene" uid="uid://k2hqr1mgqbs1" path="res://Island Scene/Island.tscn" id="1_nlvu6"]
+
+[node name="ProofOfConcept" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kr6td")
+metadata/_edit_vertical_guides_ = [0.0]
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="0" parent="." instance=ExtResource("1_nlvu6")]
+offset_left = 926.0
+offset_top = 111.0
+offset_right = 926.0
+offset_bottom = 111.28
+
+[node name="2" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 371.0
+offset_top = 110.0
+offset_right = 371.0
+offset_bottom = 110.0
+
+[node name="3" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 295.0
+offset_right = 213.0
+offset_bottom = 295.0
+
+[node name="4" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 1105.0
+offset_top = 600.0
+offset_right = 1105.0
+offset_bottom = 600.0
+
+[node name="5" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 734.0
+offset_top = 317.0
+offset_right = 734.0
+offset_bottom = 317.0
+
+[node name="6" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 668.0
+offset_top = 101.0
+offset_right = 668.0
+offset_bottom = 101.0
+
+[node name="7" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 830.0
+offset_top = 536.0
+offset_right = 830.0
+offset_bottom = 536.0
+
+[node name="8" parent="." instance=ExtResource("1_nlvu6")]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 468.0
+offset_top = 285.0
+offset_right = 468.0
+offset_bottom = 285.0
+
+[node name="9" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 1023.0
+offset_top = 333.0
+offset_right = 1023.0
+offset_bottom = 333.0
+
+[node name="10" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 516.0
+offset_top = 523.0
+offset_right = 516.0
+offset_bottom = 523.0
+
+[node name="11" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 123.0
+offset_top = 545.0
+offset_right = 123.0
+offset_bottom = 545.0

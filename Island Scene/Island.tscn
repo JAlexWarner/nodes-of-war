@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://k2hqr1mgqbs1"]
+
+[ext_resource type="Script" path="res://Island Scene/island.gd" id="1_0f6pd"]
+[ext_resource type="FontFile" uid="uid://ckihfisyxm3jd" path="res://Blob/LeagueSpartan-Bold.otf" id="2_6y2x2"]
+[ext_resource type="Script" path="res://Island Scene/label.gd" id="2_lsp7e"]
+[ext_resource type="Shader" path="res://Island Scene/Island.gdshader" id="4_k6ad3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8t3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nu23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdu45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mscut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8tl8x"]
+
+[sub_resource type="Theme" id="Theme_nkpqn"]
+default_font = ExtResource("2_6y2x2")
+default_font_size = 18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_61652"]
+resource_local_to_scene = true
+shader = ExtResource("4_k6ad3")
+shader_parameter/line_thickness = 0.01
+shader_parameter/radius = 0.48
+shader_parameter/origin = Vector2(0.5, 0.5)
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/glow_color = Color(1, 0.843137, 0, 1)
+shader_parameter/intensity = 0.7
+shader_parameter/glow_bool = false
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f14j1"]
+load_path = "res://.godot/imported/black_128_128.svg-e3d0814de85293bb0679c885bdfe3499.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6wgc"]
+radius = 32.596
+
+[node name="Island" type="Control"]
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(64, 87)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 87.0
+script = ExtResource("1_0f6pd")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -33.0
+offset_right = -32.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l8t3n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1nu23")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hdu45")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mscut")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8tl8x")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -32.0
+offset_top = -59.0
+offset_right = 32.0
+offset_bottom = -35.0
+theme = SubResource("Theme_nkpqn")
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("2_lsp7e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_61652")
+scale = Vector2(0.4, 0.4)
+texture = SubResource("CompressedTexture2D_f14j1")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(1.90735e-06, 1.90735e-06)
+shape = SubResource("CircleShape2D_h6wgc")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

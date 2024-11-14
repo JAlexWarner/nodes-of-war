@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://b777df1mk8k0d"]
+
+[ext_resource type="Script" path="res://Game Scene/proof_of_concept.gd" id="1_kr6td"]
+[ext_resource type="PackedScene" uid="uid://k2hqr1mgqbs1" path="res://Island Scene/Island.tscn" id="1_nlvu6"]
+
+[node name="ProofOfConcept" type="Node2D"]
+script = ExtResource("1_kr6td")
+
+[node name="Island" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(65, 44)
+
+[node name="Island2" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(110, 150)
+
+[node name="Island3" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(197, 76)
+
+[node name="Island4" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(229, 186)
+
+[node name="Island5" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(107, 243)
+
+[node name="Island6" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(344, 89)
+
+[node name="Island7" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(355, 183)
+
+[node name="Island8" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(275, 260)
+
+[node name="Island9" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(147, 329)
+
+[node name="Island10" parent="." instance=ExtResource("1_nlvu6")]
+position = Vector2(1854, 1017)

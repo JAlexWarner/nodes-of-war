@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://b777df1mk8k0d"]
+
+[ext_resource type="Script" path="res://Game Scene/proof_of_concept.gd" id="1_kr6td"]
+[ext_resource type="PackedScene" uid="uid://k2hqr1mgqbs1" path="res://Island Scene/Island.tscn" id="1_nlvu6"]
+
+[node name="ProofOfConcept" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kr6td")
+
+[node name="Island0" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+offset_left = 926.0
+offset_top = 111.0
+offset_right = 926.0
+offset_bottom = 111.28
+connected_islands = [NodePath("../Island6"), NodePath("../Island9")]
+
+[node name="Island1" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 108.0
+offset_top = 84.0
+offset_right = 108.0
+offset_bottom = 84.0
+connected_islands = [NodePath("../Island2"), NodePath("../Island3")]
+
+[node name="Island2" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 371.0
+offset_top = 110.0
+offset_right = 371.0
+offset_bottom = 110.0
+
+[node name="Island3" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 295.0
+offset_right = 213.0
+offset_bottom = 295.0
+connected_islands = [NodePath("../Island8"), NodePath("../Island11")]
+
+[node name="Island4" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 1105.0
+offset_top = 600.0
+offset_right = 1105.0
+offset_bottom = 600.0
+connected_islands = [NodePath("../Island9"), NodePath("../Island7")]
+
+[node name="Island5" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 734.0
+offset_top = 317.0
+offset_right = 734.0
+offset_bottom = 317.0
+connected_islands = [NodePath("../Island0")]
+
+[node name="Island6" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 668.0
+offset_top = 101.0
+offset_right = 668.0
+offset_bottom = 101.0
+
+[node name="Island7" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 830.0
+offset_top = 536.0
+offset_right = 830.0
+offset_bottom = 536.0
+connected_islands = [NodePath("../Island5")]
+
+[node name="Island8" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 468.0
+offset_top = 285.0
+offset_right = 468.0
+offset_bottom = 285.0
+connected_islands = [NodePath("../Island2"), NodePath("../Island6"), NodePath("../Island5")]
+
+[node name="Island9" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 1023.0
+offset_top = 333.0
+offset_right = 1023.0
+offset_bottom = 333.0
+connected_islands = [NodePath("../Island5")]
+
+[node name="Island10" parent="." node_paths=PackedStringArray("connected_islands") instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 516.0
+offset_top = 523.0
+offset_right = 516.0
+offset_bottom = 523.0
+connected_islands = [NodePath("../Island8"), NodePath("../Island11")]
+
+[node name="Island11" parent="." instance=ExtResource("1_nlvu6")]
+layout_mode = 2
+offset_left = 123.0
+offset_top = 545.0
+offset_right = 123.0
+offset_bottom = 545.0
