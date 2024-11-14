@@ -36,7 +36,7 @@ load_path = "res://.godot/imported/black_128_128.svg-e3d0814de85293bb0679c885bdf
 [sub_resource type="CircleShape2D" id="CircleShape2D_h6wgc"]
 radius = 32.596
 
-[node name="Island" type="Control"]
+[node name="Island" type="Control" node_paths=PackedStringArray("island_sprite", "island_label")]
 z_index = 1
 z_as_relative = false
 custom_minimum_size = Vector2(64, 87)
@@ -45,6 +45,8 @@ anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 87.0
 script = ExtResource("1_0f6pd")
+island_sprite = NodePath("Sprite2D")
+island_label = NodePath("Label")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

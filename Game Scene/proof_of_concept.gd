@@ -22,6 +22,9 @@ var connections = [[0,6],
 [10,8],
 [10,11]]
 
+var island_locations = [[926, 111], [108, 84], [371, 110], [213, 295], [1105, 600], [734, 317], \
+[668, 101], [830, 536], [468, 285], [1023, 333], [516, 523], [123, 545]]
+
 @onready var controllers: Array[int]
 
 @onready var island_grid = []
@@ -128,16 +131,19 @@ func create_map_lines(connections_grid):
 
 func _ready():
 	#####
+	# TODO: Instantiate Island Map
 	
-	var new_island_scene = load("res://Island Scene/Island.tscn")
-	var island_instance = new_island_scene.instantiate()
+	for island_index in range(len(island_locations)):
+		var new_island_scene = load("res://Island Scene/Island.tscn")
+		var island_instance = new_island_scene.instantiate()
+		
+		var new_pos = island_locations[island_index]
+		island_instance.position = Vector2(new_pos[0], new_pos[1])
+		island_instance.name = str(island_index)
+		island_instance.island_id = island_index
+		island_instance.current_resources = 1
 	
-	island_instance.position = Vector2(108, 84)
-	island_instance.name = "1"
-	island_instance.island_id = 1
-	island_instance.current_resources = 1
-	
-	add_child(island_instance)
+		add_child(island_instance)
 	
 	#####
 	
@@ -164,7 +170,6 @@ func _ready():
 	#var island_id_to_name = [] # If we change from the ith island being named i
 	
 	for i in range(num_islands):
-		print(str(i) + ": " + str(Vector2(get_node(str(i)).position.x,get_node(str(i)).position.y)))
 		island_grid.append([])
 		
 		# Inform island of what its unique ID is

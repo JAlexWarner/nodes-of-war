@@ -15,6 +15,10 @@ run/main_scene="res://Main Menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SteamNetworking="*res://Networking/steam_networking.gd"
+
 [display]
 
 window/stretch/mode="viewport"

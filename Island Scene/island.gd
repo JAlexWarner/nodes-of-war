@@ -1,6 +1,9 @@
 extends Control
 class_name Island
 
+@export var island_sprite: Sprite2D
+@export var island_label: Label
+
 var controlling_player: int = 0
 var island_id: int
 var current_resources: int = 1
@@ -11,9 +14,9 @@ var current_color
 func _modify_selection_aspect(new_selection_value):
 	selected = new_selection_value
 	if(selected):
-		%Sprite2D.material.set_shader_parameter("glow_bool", true)
+		island_sprite.material.set_shader_parameter("glow_bool", true)
 	else:
-		%Sprite2D.material.set_shader_parameter("glow_bool", false)
+		island_sprite.material.set_shader_parameter("glow_bool", false)
 	
 signal ownership_changed()
 func change_owner(new_owner: int):
@@ -64,8 +67,8 @@ func receive_resources(player_id: int, incoming_blob_resources):
 func _ready() -> void:
 	#%Sprite2D.material.set_local_to_scene(true)
 	
-	resources_changed.connect(%Label._on_resources_label_update)
-	%Label.text = str(current_resources)
+	resources_changed.connect(island_label._on_resources_label_update)
+	island_label.text = str(current_resources)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -84,7 +87,7 @@ func _resource_timer_timeout() -> void:
 
 #TODO: Figure out how to make sprite glow then unglow after unclicked
 func _on_button_pressed() -> void:
-	%Sprite2D.set_modulate(Color8(62, 164, 140))
+	island_sprite.set_modulate(Color8(62, 164, 140))
 	pass
 	
 # _island_destination
@@ -103,7 +106,7 @@ func _spawn_outward_resource_blob(island_destination: Control) -> void:
 	blob_instance.target_island = island_destination
 	blob_instance.position = Vector2(get_node("./").position)
 	blob_instance.resource_label = blob_label
-	blob_instance.original_color = %Sprite2D.material.get_shader_parameter("color")
+	blob_instance.original_color = island_sprite.material.get_shader_parameter("color")
 	
 	get_parent().add_child(blob_instance)
 
